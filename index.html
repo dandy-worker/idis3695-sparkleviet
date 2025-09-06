@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SparkleViet — Sparkling Water Machines for Vietnam</title>
+  <meta name="description" content="Launch-ready website for a Vietnam-based sparkling water machine business. Easily edit text, images, and sections." />
+  <style>
+    :root{
+      --bg:#0f172a;
+      --panel:#111827ee;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#22d3ee;
+      --accent-2:#fde68a;
+      --card:#0b1228;
+      --ring:#22d3ee55;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:linear-gradient(180deg,#0b1228, #0f172a 30%, #0b1228);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;background:rgba(10,16,35,.7);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #1f2937}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center}
+    .logo{width:36px;height:36px;border-radius:10px;background:radial-gradient(circle at 30% 30%, var(--accent), transparent 55%),radial-gradient(circle at 70% 70%, var(--accent-2), transparent 55%), #0ea5b6;border:1px solid #155e75}
+    .brand h1{font-size:18px;margin:0;letter-spacing:.3px}
+    .menu a{margin:0 10px;padding:8px 10px;border-radius:10px;color:var(--text)}
+    .menu a:hover{background:#0b1228}
+    .cta{padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#0b1228;font-weight:700;border:0}
+    .hero{padding:56px 0;background:radial-gradient(1200px 600px at 80% -100px, #1e293b 10%, transparent 60%)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .hero h2{font-size:40px;line-height:1.15;margin:.2em 0}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:#0b1228;border:1px solid #1f2937;border-radius:999px;padding:6px 10px;color:var(--muted)}
+    .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+    .hero p{color:var(--muted);font-size:18px}
+    .card{background:linear-gradient(180deg,#0b1228, #0a1224);border:1px solid #1f2937;border-radius:16px;padding:18px}
+    .ksp{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}
+    .ksp .item{padding:16px;border:1px dashed #1f2937;border-radius:14px}
+    .ksp h4{margin:.2em 0;font-size:16px}
+    .ksp p{margin:0;color:var(--muted);font-size:14px}
+    section{padding:56px 0;border-top:1px solid #1f2937}
+    section h3{font-size:28px;margin:0 0 10px}
+    section p.lede{color:var(--muted);margin-top:0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .pill{display:inline-block;padding:6px 10px;border:1px solid #1f2937;border-radius:999px;color:var(--muted)}
+    .list{margin:8px 0 0 0;padding-left:18px}
+    .product-shot{aspect-ratio:4/3;border-radius:16px;background:radial-gradient(200px 200px at 30% 30%, var(--accent) 0%, transparent 60%), url('https://images.unsplash.com/photo-1542996966-2e31c00bae30?q=80&w=1469&auto=format&fit=crop') center/cover no-repeat;border:1px solid #1f2937}
+    .faq details{background:#0b1228;border:1px solid #1f2937;border-radius:12px;padding:12px}
+    .faq details+details{margin-top:10px}
+    .faq summary{cursor:pointer}
+    .ref-card{padding:14px;border:1px solid #1f2937;border-radius:12px;background:#0b1228}
+    .footer{padding:30px 0;color:var(--muted);border-top:1px solid #1f2937}
+    @media (max-width: 960px){
+      .hero-grid{grid-template-columns:1fr}
+      .ksp{grid-template-columns:1fr 1fr}
+      .grid-2{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .menu{display:none}
+      .menu.open{display:block;position:absolute;top:60px;left:0;right:0;background:#0b1228;border-top:1px solid #1f2937;padding:12px}
+      .menu.open a{display:block;margin:6px 0}
+      header .nav{position:relative}
+      .hamburger{display:inline-flex}
+    }
+    @media (min-width: 961px){.hamburger{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>SparkleViet</h1>
+      </div>
+      <nav class="menu" id="menu">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#how">How It Works</a>
+        <a href="#b2b">For Businesses</a>
+        <a href="#country">Country & CAGE</a>
+        <a href="#legal">Legal & Taxes</a>
+        <a href="#ops">Real Estate & Ops</a>
+        <a href="#culture">Business Culture</a>
+        <a href="#risks">Risks & Opportunities</a>
+        <a href="#examples">U.S. Examples</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="hamburger cta" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge"><span class="dot"></span> Locally Made • HCMC Launch</span>
+        <h2>Fresh sparkle. Vietnam style.</h2>
+        <p>Make soda at home in seconds. Healthier, fun, and better for the planet. Built in Vietnam with global quality.</p>
+        <div style="display:flex;gap:10px;margin-top:12px">
+          <a class="cta" href="#products">Shop Machine</a>
+          <a class="pill" href="#how">See How It Works</a>
+        </div>
+        <div class="ksp">
+          <div class="item"><h4>Health-forward</h4><p>No sugar by default. Add fruit, not fructose.</p></div>
+          <div class="item"><h4>Eco-friendly</h4><p>Cut single-use bottles with refillable CO₂.</p></div>
+          <div class="item"><h4>Made in VN</h4><p>Local jobs, local service, global standards.</p></div>
+          <div class="item"><h4>Recurring value</h4><p>Affordable refills, lifetime support.</p></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="product-shot" aria-label="Sparkling water machine photo placeholder"></div>
+        <div style="margin-top:12px;color:var(--muted)">
+          ✨ “Perfect for Saigon heat — my family drinks more water now.” — Early tester in District 3
+        </div>
+      </div>
+    </div>
+  </main>
+  <section id="products">
+    <div class="container">
+      <h3>Products</h3>
+      <p class="lede">Everything you need to fizz on day one — with easy CO₂ exchange in Ho Chi Minh City.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h4 style="margin:0 0 6px">SparkleViet One — Starter Kit</h4>
+          <p class="muted">Machine + 1L bottle + CO₂ cylinder</p>
+          <ul class="list">
+            <li>Carbonates up to 60L per cylinder</li>
+            <li>Fast, safe valve system; no power needed</li>
+            <li>Compact footprint for apartment kitchens</li>
+            <li>1-year warranty • Service center in HCMC</li>
+          </ul>
+          <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+            <strong style="font-size:20px">₫2,490,000</strong>
+            <a class="cta" href="#contact">Pre-Order</a>
+            <span class="pill">Ships: HCMC only (phase 1)</span>
+          </div>
+        </div>
+        <div class="card">
+          <h4 style="margin:0 0 6px">CO₂ Refills & Flavors</h4>
+          <ul class="list">
+            <li>Door-to-door cylinder exchange in HCMC</li>
+            <li>Food-grade CO₂ • Safe transport & storage</li>
+            <li>Optional natural flavors (lemon, lychee, mint)</li>
+          </ul>
+          <p style="color:var(--muted)">Exchange price: <strong>₫159,000</strong> per cylinder (introductory). Bulk & B2B plans available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="how">
+    <div class="container">
+      <h3>How It Works</h3>
+      <div class="grid-3">
+        <div class="card"><strong>1) Fill</strong><p>Cold water in the bottle up to the line.</p></div>
+        <div class="card"><strong>2) Fizz</strong><p>Lock in, press for 1–3 pulses. Bubbles!</p></div>
+        <div class="card"><strong>3) Flavor</strong><p>Optional: add lemon, herbs, or a drop of syrup.</p></div>
+      </div>
+      <div class="faq" style="margin-top:16px">
+        <details><summary><strong>Is it safe?</strong></summary><p>Yes. We use food-grade CO₂ and a pressure-relief system that meets VN standards. Bottles are BPA-free.</p></details>
+        <details><summary><strong>How do refills work?</strong></summary><p>Swap your empty for a full cylinder via courier. Simple, fast, and eco-friendly.</p></details>
+        <details><summary><strong>Cleaning & care</strong></summary><p>Hand-wash bottle. Wipe machine with a damp cloth. No electricity required.</p></details>
+      </div>
+    </div>
+  </section>
+  <section id="b2b">
+    <div class="container">
+      <h3>For Businesses</h3>
+      <p class="lede">Cafés, restaurants, hotels, and offices: reduce bottled soda, cut costs, and wow guests with on-demand sparkle.</p>
+      <div class="grid-3">
+        <div class="card"><strong>Cafés & Bars</strong><p>Signature spritzers & cocktails. Lower storage. Faster service.</p></div>
+        <div class="card"><strong>Hotels</strong><p>Breakfast buffets & lounges love sustainable sparkle.</p></div>
+        <div class="card"><strong>Offices</strong><p>Healthy perk for teams. Hydration up, plastic down.</p></div>
+      </div>
+      <p><a class="cta" href="#contact">Request a Demo</a></p>
+    </div>
+  </section>
+  <section id="country">
+    <div class="container">
+      <h3>Country Overview & CAGE</h3>
+      <p class="lede">Vietnam’s fast-growing, urban, and health-conscious market is primed for at-home beverage innovation.</p>
+      <div class="grid-2">
+        <div class="card">
+          <strong>Snapshot</strong>
+          <ul class="list">
+            <li>~98M population; median age ~30; rising middle class</li>
+            <li>HCMC: ~9M residents; Vietnam’s commercial hub</li>
+            <li>Household appliances market: strong growth</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>CAGE Highlights</strong>
+          <ul class="list">
+            <li><em>Cultural:</em> Café culture; wellness rising; bilingual site helps</li>
+            <li><em>Administrative:</em> 100% foreign-owned LLC feasible</li>
+            <li><em>Geographic:</em> Local manufacturing beats long lead times</li>
+            <li><em>Economic:</em> Price-sensitive but premium-curious urban core</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="legal">
+    <div class="container">
+      <h3>Good to Know: Legal, Taxes, Policy</h3>
+      <div class="grid-3">
+        <div class="card">
+          <strong>Entity & Ownership</strong>
+          <ul class="list">
+            <li>Wholly foreign-owned LLC (WFOE) common</li>
+            <li>Investment & Enterprise Registration needed</li>
+            <li>Retail of own product permitted; trading license if broader</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Manufacturing & Compliance</strong>
+          <ul class="list">
+            <li>Industrial-zone factory; fire & EHS approvals</li>
+            <li>Electrical safety (CR mark), food-grade CO₂</li>
+            <li>Labeling; cylinder transport safety rules</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Taxes & Currency</strong>
+          <ul class="list">
+            <li>CIT 20%; VAT 10% on sales</li>
+            <li>Local sales in VND; profit repatriation allowed post-tax</li>
+            <li>Plan for FX & supply chain variability</li>
+          </ul>
+        </div>
+      </div>
+      <p style="color:var(--muted);margin-top:8px">Note: EPR (recycling) rules are expanding; plan reverse-logistics for cylinders/machines.</p>
+    </div>
+  </section>
+  <section id="ops">
+    <div class="container">
+      <h3>Real Estate & Operations</h3>
+      <div class="grid-2">
+        <div class="card">
+          <strong>Factory</strong>
+          <ul class="list">
+            <li>Ready-built units near HCMC ~US$4–5/m²/month</li>
+            <li>Land leases (long-term) priced per m² per term</li>
+            <li>Typical deposits 3–6 months; quarterly rent</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>People</strong>
+          <ul class="list">
+            <li>48-hour work week; OT limits apply</li>
+            <li>Employer social insurance ~21.5%</li>
+            <li>“13th month” Tet bonus is common practice</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="culture">
+    <div class="container">
+      <h3>General Business Practices</h3>
+      <div class="grid-3">
+        <div class="card"><strong>Relationships first</strong><p>Warm intros, shared meals, patience in deals.</p></div>
+        <div class="card"><strong>Respect & face</strong><p>Be tactful, praise in public, coach in private.</p></div>
+        <div class="card"><strong>Communication</strong><p>Indirect style; confirm understanding kindly.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="risks">
+    <div class="container">
+      <h3>Risks & Opportunities</h3>
+      <div class="grid-2">
+        <div class="card">
+          <strong>Key Risks</strong>
+          <ul class="list">
+            <li>Regulatory updates; EPR recycling obligations</li>
+            <li>Copycat entrants; price undercutting</li>
+            <li>Supply chain & FX swings</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Key Upside</strong>
+          <ul class="list">
+            <li>First-mover in home carbonation</li>
+            <li>Health & sustainability tailwinds</li>
+            <li>Regional export potential (ASEAN)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="examples">
+    <div class="container">
+      <h3>U.S. Firms in Vietnam — What Works</h3>
+      <div class="grid-3">
+        <div class="ref-card"><strong>Starbucks</strong><p>Localized sweet, novel drinks and leaned into café culture to win youth.</p></div>
+        <div class="ref-card"><strong>Coca-Cola</strong><p>Shifted to 100% ownership; broadened portfolio (tea, water) for local tastes.</p></div>
+        <div class="ref-card"><strong>P&G/Unilever</strong><p>Right-sized formats & localized formulas to fit income and preferences.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container">
+      <h3>Contact</h3>
+      <div class="grid-2">
+        <div class="card">
+          <p><strong>Email</strong><br>hello@sparkleviet.vn</p>
+          <p><strong>Address</strong><br>Floor 8, ABC Tower, District 1, HCMC</p>
+          <p><strong>Social</strong><br>Facebook · Instagram · Zalo</p>
+        </div>
+        <form class="card" onsubmit="event.preventDefault(); alert('Thanks! We\\'ll be in touch.');">
+          <label>Name<br><input required style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2937;background:#0b1228;color:var(--text)" /></label>
+          <label style="display:block;margin-top:8px">Email<br><input type="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2937;background:#0b1228;color:var(--text)" /></label>
+          <label style="display:block;margin-top:8px">Message<br><textarea rows="4" style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2937;background:#0b1228;color:var(--text)"></textarea></label>
+          <button class="cta" style="margin-top:10px">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="year"></span> SparkleViet</div>
+      <div style="color:var(--muted)">Made in Vietnam • For class use (demo)</div>
+    </div>
+  </footer>
+  <script>
+    function toggleMenu(){
+      const m=document.getElementById('menu');
+      m.classList.toggle('open');
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
