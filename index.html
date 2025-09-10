@@ -1,332 +1,1039 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SparkleViet — Sparkling Water Machines for Vietnam</title>
-  <meta name="description" content="Launch-ready website for a Vietnam-based sparkling water machine business. Easily edit text, images, and sections." />
-  <style>
-    :root{
-      --bg:#0f172a;
-      --panel:#111827ee;
-      --text:#e5e7eb;
-      --muted:#9ca3af;
-      --accent:#22d3ee;
-      --accent-2:#fde68a;
-      --card:#0b1228;
-      --ring:#22d3ee55;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:linear-gradient(180deg,#0b1228, #0f172a 30%, #0b1228);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
-    a{color:var(--accent);text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;z-index:50;background:rgba(10,16,35,.7);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #1f2937}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:10px;align-items:center}
-    .logo{width:36px;height:36px;border-radius:10px;background:radial-gradient(circle at 30% 30%, var(--accent), transparent 55%),radial-gradient(circle at 70% 70%, var(--accent-2), transparent 55%), #0ea5b6;border:1px solid #155e75}
-    .brand h1{font-size:18px;margin:0;letter-spacing:.3px}
-    .menu a{margin:0 10px;padding:8px 10px;border-radius:10px;color:var(--text)}
-    .menu a:hover{background:#0b1228}
-    .cta{padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#0b1228;font-weight:700;border:0}
-    .hero{padding:56px 0;background:radial-gradient(1200px 600px at 80% -100px, #1e293b 10%, transparent 60%)}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-    .hero h2{font-size:40px;line-height:1.15;margin:.2em 0}
-    .badge{display:inline-flex;gap:8px;align-items:center;background:#0b1228;border:1px solid #1f2937;border-radius:999px;padding:6px 10px;color:var(--muted)}
-    .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
-    .hero p{color:var(--muted);font-size:18px}
-    .card{background:linear-gradient(180deg,#0b1228, #0a1224);border:1px solid #1f2937;border-radius:16px;padding:18px}
-    .ksp{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}
-    .ksp .item{padding:16px;border:1px dashed #1f2937;border-radius:14px}
-    .ksp h4{margin:.2em 0;font-size:16px}
-    .ksp p{margin:0;color:var(--muted);font-size:14px}
-    section{padding:56px 0;border-top:1px solid #1f2937}
-    section h3{font-size:28px;margin:0 0 10px}
-    section p.lede{color:var(--muted);margin-top:0}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .pill{display:inline-block;padding:6px 10px;border:1px solid #1f2937;border-radius:999px;color:var(--muted)}
-    .list{margin:8px 0 0 0;padding-left:18px}
-    .product-shot{aspect-ratio:4/3;border-radius:16px;background:radial-gradient(200px 200px at 30% 30%, var(--accent) 0%, transparent 60%), url('https://images.unsplash.com/photo-1542996966-2e31c00bae30?q=80&w=1469&auto=format&fit=crop') center/cover no-repeat;border:1px solid #1f2937}
-    .faq details{background:#0b1228;border:1px solid #1f2937;border-radius:12px;padding:12px}
-    .faq details+details{margin-top:10px}
-    .faq summary{cursor:pointer}
-    .ref-card{padding:14px;border:1px solid #1f2937;border-radius:12px;background:#0b1228}
-    .footer{padding:30px 0;color:var(--muted);border-top:1px solid #1f2937}
-    @media (max-width: 960px){
-      .hero-grid{grid-template-columns:1fr}
-      .ksp{grid-template-columns:1fr 1fr}
-      .grid-2{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
-      .menu{display:none}
-      .menu.open{display:block;position:absolute;top:60px;left:0;right:0;background:#0b1228;border-top:1px solid #1f2937;padding:12px}
-      .menu.open a{display:block;margin:6px 0}
-      header .nav{position:relative}
-      .hamburger{display:inline-flex}
-    }
-    @media (min-width: 961px){.hamburger{display:none}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkleViet — Sparkling Water Machines for Vietnam</title>
+    <meta name="description" content="Premium sparkling water machines made in Vietnam. Sustainable, healthy, and affordable home carbonation solutions for modern Vietnamese households.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary: #f59e0b;
+            --background: #0f172a;
+            --surface: #1e293b;
+            --surface-elevated: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --accent-glow: rgba(14, 165, 233, 0.15);
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-bg: linear-gradient(180deg, #0b1426 0%, #0f172a 50%, #1e293b 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--gradient-bg);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header Styles */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo {
+            width: 42px;
+            height: 42px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 20px var(--accent-glow);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            margin: 3px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center top, rgba(14, 165, 233, 0.1), transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-text {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border-color: var(--primary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .feature-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .product-showcase {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image {
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, 
+                rgba(14, 165, 233, 0.2) 0%, 
+                transparent 50%), 
+                url('https://images.unsplash.com/photo-1542996966-2e31c00bae30?q=80&w=1469&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .product-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(14, 165, 233, 0.1));
+            border-radius: 16px;
+        }
+
+        .testimonial {
+            color: var(--text-muted);
+            font-style: italic;
+            padding: 1rem;
+            border-left: 3px solid var(--primary);
+            background: rgba(14, 165, 233, 0.05);
+            border-radius: 8px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .card-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .price {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-input,
+        .form-textarea {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid var(--border);
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-link {
+                padding: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <h1>SparkleViet</h1>
-      </div>
-      <nav class="menu" id="menu">
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#how">How It Works</a>
-        <a href="#b2b">For Businesses</a>
-        <a href="#country">Country & CAGE</a>
-        <a href="#legal">Legal & Taxes</a>
-        <a href="#ops">Real Estate & Ops</a>
-        <a href="#culture">Business Culture</a>
-        <a href="#risks">Risks & Opportunities</a>
-        <a href="#examples">U.S. Examples</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="hamburger cta" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
-    </div>
-  </header>
-  <main id="home" class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="badge"><span class="dot"></span> Locally Made • HCMC Launch</span>
-        <h2>Fresh sparkle. Vietnam style.</h2>
-        <p>Make soda at home in seconds. Healthier, fun, and better for the planet. Built in Vietnam with global quality.</p>
-        <div style="display:flex;gap:10px;margin-top:12px">
-          <a class="cta" href="#products">Shop Machine</a>
-          <a class="pill" href="#how">See How It Works</a>
+    <header class="header">
+        <nav class="container">
+            <div class="nav">
+                <a href="#home" class="brand">
+                    <div class="logo">S</div>
+                    <div class="brand-name">SparkleViet</div>
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                    <li><a href="#business" class="nav-link">For Business</a></li>
+                    <li><a href="#about" class="nav-link">About Vietnam</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="badge">
+                            <div class="dot"></div>
+                            Made in Vietnam • HCMC Launch
+                        </div>
+                        <h1 class="hero-title">Fresh sparkle. Vietnam style.</h1>
+                        <p class="hero-description">
+                            Make premium sparkling water at home in seconds. Healthier, more sustainable, and better for your wallet. Built in Vietnam with global quality standards.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#products" class="cta-button">Shop Machines</a>
+                            <a href="#how-it-works" class="secondary-button">See How It Works</a>
+                        </div>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-title">Health-Forward</div>
+                                <div class="feature-description">No sugar by default. Add fresh fruit, not fructose.</div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-title">Eco-Friendly</div>
+                                <div class="feature-description">Reduce plastic waste with refillable CO₂ cylinders.</div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-title">Made in Vietnam</div>
+                                <div class="feature-description">Supporting local jobs with global quality standards.</div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-title">Long-term Value</div>
+                                <div class="feature-description">Affordable refills with lifetime support.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="product-showcase">
+                            <div class="product-image"></div>
+                            <div class="testimonial">
+                                ✨ "Perfect for Saigon's heat — my family drinks more water now!" — Early tester in District 3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Products</h2>
+                    <p class="section-subtitle">Everything you need to start making sparkling water today, with convenient CO₂ exchange service in Ho Chi Minh City.</p>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">SparkleViet One — Starter Kit</div>
+                        <p class="card-content">Complete machine + 1L bottle + CO₂ cylinder</p>
+                        <ul class="list">
+                            <li>Carbonates up to 60L per cylinder</li>
+                            <li>Fast, safe valve system — no electricity needed</li>
+                            <li>Compact design perfect for apartment kitchens</li>
+                            <li>1-year warranty with service center in HCMC</li>
+                        </ul>
+                        <div class="price">₫2,490,000</div>
+                        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                            <a href="#contact" class="cta-button">Pre-Order Now</a>
+                            <span class="secondary-button" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Ships: HCMC only (Phase 1)</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">CO₂ Refills & Flavors</div>
+                        <ul class="list">
+                            <li>Door-to-door cylinder exchange in HCMC</li>
+                            <li>Food-grade CO₂ with safe transport & storage</li>
+                            <li>Optional natural flavors (lemon, lychee, mint)</li>
+                            <li>Flexible scheduling via app or phone</li>
+                        </ul>
+                        <p class="card-content">
+                            <strong>Exchange price: ₫159,000</strong> per cylinder (introductory rate)<br>
+                            Bulk and business plans available.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">How It Works</h2>
+                    <p class="section-subtitle">Three simple steps to perfect sparkling water</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-title">1. Fill</div>
+                        <p class="card-content">Add cold water to the bottle up to the fill line. Colder water holds carbonation better.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">2. Fizz</div>
+                        <p class="card-content">Lock the bottle in place and press the button 1-3 times. Listen for the bubbles!</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">3. Flavor</div>
+                        <p class="card-content">Optional: add fresh lemon, herbs, or a drop of natural syrup for variety.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-container" style="margin-top: 3rem;">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Is it safe to use?</span>
+                            <span>+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, completely safe. We use food-grade CO₂ and a pressure-relief system that meets Vietnamese safety standards. All bottles are BPA-free.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do CO₂ refills work?</span>
+                            <span>+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Simply swap your empty cylinder for a full one via our courier service. Order through our app or call, and we'll handle the rest. Fast, simple, and eco-friendly.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What about cleaning and maintenance?</span>
+                            <span>+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Very easy! Hand-wash the bottle with warm soapy water. Wipe the machine with a damp cloth. No electricity means no complex maintenance.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="business" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">For Businesses</h2>
+                    <p class="section-subtitle">Cafés, restaurants, hotels, and offices: reduce costs, eliminate waste, and delight customers with on-demand sparkle.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-title">Cafés & Bars</div>
+                        <p class="card-content">Create signature spritzers and cocktails. Reduce storage needs and speed up service with fresh sparkling water on tap.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Hotels & Restaurants</div>
+                        <p class="card-content">Perfect for breakfast buffets and dining rooms. Guests love the sustainable approach and fresh taste.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Offices</div>
+                        <p class="card-content">A healthy perk for your team. Increase hydration while dramatically reducing plastic waste.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#contact" class="cta-button">Request Business Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Why Vietnam?</h2>
+                    <p class="section-subtitle">Vietnam's growing, health-conscious urban market is perfect for home beverage innovation.</p>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">Market Snapshot</div>
+                        <ul class="list">
+                            <li>98M population with median age of 30</li>
+                            <li>HCMC: 9M+ residents, Vietnam's commercial hub</li>
+                            <li>Rapidly growing middle class and disposable income</li>
+                            <li>Strong demand for premium home appliances</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Cultural Advantages</div>
+                        <ul class="list">
+                            <li>Strong café culture and beverage innovation</li>
+                            <li>Growing health and wellness awareness</li>
+                            <li>Local manufacturing reduces costs and lead times</li>
+                            <li>Government support for sustainable business</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Ready to bring fresh sparkling water to your home or business?</p>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">Contact Information</div>
+                        <div class="card-content">
+                            <p><strong>Email:</strong><br>hello@sparkleviet.vn</p>
+                            <p><strong>Address:</strong><br>Floor 8, ABC Tower<br>District 1, Ho Chi Minh City</p>
+                            <p><strong>Follow Us:</strong><br>Facebook • Instagram • Zalo</p>
+                            <p><strong>Phone:</strong><br>+84 (28) 1234-5678</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Send us a message</div>
+                        <form class="contact-form" onsubmit="handleSubmit(event)">
+                            <div class="form-group">
+                                <label class="form-label">Name *</label>
+                                <input type="text" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email *</label>
+                                <input type="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Interest</label>
+                                <select class="form-input">
+                                    <option>Home Use</option>
+                                    <option>Business/Restaurant</option>
+                                    <option>Bulk Orders</option>
+                                    <option>Partnership</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-textarea" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="cta-button">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    © <span id="currentYear"></span> SparkleViet. All rights reserved.
+                </div>
+                <div class="footer-text">
+                    Made in Vietnam • Sustainable Future • Demo Website
+                </div>
+            </div>
         </div>
-        <div class="ksp">
-          <div class="item"><h4>Health-forward</h4><p>No sugar by default. Add fruit, not fructose.</p></div>
-          <div class="item"><h4>Eco-friendly</h4><p>Cut single-use bottles with refillable CO₂.</p></div>
-          <div class="item"><h4>Made in VN</h4><p>Local jobs, local service, global standards.</p></div>
-          <div class="item"><h4>Recurring value</h4><p>Affordable refills, lifetime support.</p></div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="product-shot" aria-label="Sparkling water machine photo placeholder"></div>
-        <div style="margin-top:12px;color:var(--muted)">
-          ✨ “Perfect for Saigon heat — my family drinks more water now.” — Early tester in District 3
-        </div>
-      </div>
-    </div>
-  </main>
-  <section id="products">
-    <div class="container">
-      <h3>Products</h3>
-      <p class="lede">Everything you need to fizz on day one — with easy CO₂ exchange in Ho Chi Minh City.</p>
-      <div class="grid-2">
-        <div class="card">
-          <h4 style="margin:0 0 6px">SparkleViet One — Starter Kit</h4>
-          <p class="muted">Machine + 1L bottle + CO₂ cylinder</p>
-          <ul class="list">
-            <li>Carbonates up to 60L per cylinder</li>
-            <li>Fast, safe valve system; no power needed</li>
-            <li>Compact footprint for apartment kitchens</li>
-            <li>1-year warranty • Service center in HCMC</li>
-          </ul>
-          <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
-            <strong style="font-size:20px">₫2,490,000</strong>
-            <a class="cta" href="#contact">Pre-Order</a>
-            <span class="pill">Ships: HCMC only (phase 1)</span>
-          </div>
-        </div>
-        <div class="card">
-          <h4 style="margin:0 0 6px">CO₂ Refills & Flavors</h4>
-          <ul class="list">
-            <li>Door-to-door cylinder exchange in HCMC</li>
-            <li>Food-grade CO₂ • Safe transport & storage</li>
-            <li>Optional natural flavors (lemon, lychee, mint)</li>
-          </ul>
-          <p style="color:var(--muted)">Exchange price: <strong>₫159,000</strong> per cylinder (introductory). Bulk & B2B plans available.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="how">
-    <div class="container">
-      <h3>How It Works</h3>
-      <div class="grid-3">
-        <div class="card"><strong>1) Fill</strong><p>Cold water in the bottle up to the line.</p></div>
-        <div class="card"><strong>2) Fizz</strong><p>Lock in, press for 1–3 pulses. Bubbles!</p></div>
-        <div class="card"><strong>3) Flavor</strong><p>Optional: add lemon, herbs, or a drop of syrup.</p></div>
-      </div>
-      <div class="faq" style="margin-top:16px">
-        <details><summary><strong>Is it safe?</strong></summary><p>Yes. We use food-grade CO₂ and a pressure-relief system that meets VN standards. Bottles are BPA-free.</p></details>
-        <details><summary><strong>How do refills work?</strong></summary><p>Swap your empty for a full cylinder via courier. Simple, fast, and eco-friendly.</p></details>
-        <details><summary><strong>Cleaning & care</strong></summary><p>Hand-wash bottle. Wipe machine with a damp cloth. No electricity required.</p></details>
-      </div>
-    </div>
-  </section>
-  <section id="b2b">
-    <div class="container">
-      <h3>For Businesses</h3>
-      <p class="lede">Cafés, restaurants, hotels, and offices: reduce bottled soda, cut costs, and wow guests with on-demand sparkle.</p>
-      <div class="grid-3">
-        <div class="card"><strong>Cafés & Bars</strong><p>Signature spritzers & cocktails. Lower storage. Faster service.</p></div>
-        <div class="card"><strong>Hotels</strong><p>Breakfast buffets & lounges love sustainable sparkle.</p></div>
-        <div class="card"><strong>Offices</strong><p>Healthy perk for teams. Hydration up, plastic down.</p></div>
-      </div>
-      <p><a class="cta" href="#contact">Request a Demo</a></p>
-    </div>
-  </section>
-  <section id="country">
-    <div class="container">
-      <h3>Country Overview & CAGE</h3>
-      <p class="lede">Vietnam’s fast-growing, urban, and health-conscious market is primed for at-home beverage innovation.</p>
-      <div class="grid-2">
-        <div class="card">
-          <strong>Snapshot</strong>
-          <ul class="list">
-            <li>~98M population; median age ~30; rising middle class</li>
-            <li>HCMC: ~9M residents; Vietnam’s commercial hub</li>
-            <li>Household appliances market: strong growth</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>CAGE Highlights</strong>
-          <ul class="list">
-            <li><em>Cultural:</em> Café culture; wellness rising; bilingual site helps</li>
-            <li><em>Administrative:</em> 100% foreign-owned LLC feasible</li>
-            <li><em>Geographic:</em> Local manufacturing beats long lead times</li>
-            <li><em>Economic:</em> Price-sensitive but premium-curious urban core</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="legal">
-    <div class="container">
-      <h3>Good to Know: Legal, Taxes, Policy</h3>
-      <div class="grid-3">
-        <div class="card">
-          <strong>Entity & Ownership</strong>
-          <ul class="list">
-            <li>Wholly foreign-owned LLC (WFOE) common</li>
-            <li>Investment & Enterprise Registration needed</li>
-            <li>Retail of own product permitted; trading license if broader</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>Manufacturing & Compliance</strong>
-          <ul class="list">
-            <li>Industrial-zone factory; fire & EHS approvals</li>
-            <li>Electrical safety (CR mark), food-grade CO₂</li>
-            <li>Labeling; cylinder transport safety rules</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>Taxes & Currency</strong>
-          <ul class="list">
-            <li>CIT 20%; VAT 10% on sales</li>
-            <li>Local sales in VND; profit repatriation allowed post-tax</li>
-            <li>Plan for FX & supply chain variability</li>
-          </ul>
-        </div>
-      </div>
-      <p style="color:var(--muted);margin-top:8px">Note: EPR (recycling) rules are expanding; plan reverse-logistics for cylinders/machines.</p>
-    </div>
-  </section>
-  <section id="ops">
-    <div class="container">
-      <h3>Real Estate & Operations</h3>
-      <div class="grid-2">
-        <div class="card">
-          <strong>Factory</strong>
-          <ul class="list">
-            <li>Ready-built units near HCMC ~US$4–5/m²/month</li>
-            <li>Land leases (long-term) priced per m² per term</li>
-            <li>Typical deposits 3–6 months; quarterly rent</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>People</strong>
-          <ul class="list">
-            <li>48-hour work week; OT limits apply</li>
-            <li>Employer social insurance ~21.5%</li>
-            <li>“13th month” Tet bonus is common practice</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="culture">
-    <div class="container">
-      <h3>General Business Practices</h3>
-      <div class="grid-3">
-        <div class="card"><strong>Relationships first</strong><p>Warm intros, shared meals, patience in deals.</p></div>
-        <div class="card"><strong>Respect & face</strong><p>Be tactful, praise in public, coach in private.</p></div>
-        <div class="card"><strong>Communication</strong><p>Indirect style; confirm understanding kindly.</p></div>
-      </div>
-    </div>
-  </section>
-  <section id="risks">
-    <div class="container">
-      <h3>Risks & Opportunities</h3>
-      <div class="grid-2">
-        <div class="card">
-          <strong>Key Risks</strong>
-          <ul class="list">
-            <li>Regulatory updates; EPR recycling obligations</li>
-            <li>Copycat entrants; price undercutting</li>
-            <li>Supply chain & FX swings</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>Key Upside</strong>
-          <ul class="list">
-            <li>First-mover in home carbonation</li>
-            <li>Health & sustainability tailwinds</li>
-            <li>Regional export potential (ASEAN)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="examples">
-    <div class="container">
-      <h3>U.S. Firms in Vietnam — What Works</h3>
-      <div class="grid-3">
-        <div class="ref-card"><strong>Starbucks</strong><p>Localized sweet, novel drinks and leaned into café culture to win youth.</p></div>
-        <div class="ref-card"><strong>Coca-Cola</strong><p>Shifted to 100% ownership; broadened portfolio (tea, water) for local tastes.</p></div>
-        <div class="ref-card"><strong>P&G/Unilever</strong><p>Right-sized formats & localized formulas to fit income and preferences.</p></div>
-      </div>
-    </div>
-  </section>
-  <section id="contact">
-    <div class="container">
-      <h3>Contact</h3>
-      <div class="grid-2">
-        <div class="card">
-          <p><strong>Email</strong><br>hello@sparkleviet.vn</p>
-          <p><strong>Address</strong><br>Floor 8, ABC Tower, District 1, HCMC</p>
-          <p><strong>Social</strong><br>Facebook · Instagram · Zalo</p>
-        </div>
-        <form class="card" onsubmit="event.preventDefault(); alert('Thanks! We\\'ll be in touch.');">
-          <label>Name<br><input required style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2937;background:#0b1228;color:var(--text)" /></label>
-          <label style="display:block;margin-top:8px">Email<br><input type="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2937;background:#0b1228;color:var(--text)" /></label>
-          <label style="display:block;margin-top:8px">Message<br><textarea rows="4" style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2937;background:#0b1228;color:var(--text)"></textarea></label>
-          <button class="cta" style="margin-top:10px">Send</button>
-        </form>
-      </div>
-    </div>
-  </section>
-  <footer class="footer">
-    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div>© <span id="year"></span> SparkleViet</div>
-      <div style="color:var(--muted)">Made in Vietnam • For class use (demo)</div>
-    </div>
-  </footer>
-  <script>
-    function toggleMenu(){
-      const m=document.getElementById('menu');
-      m.classList.toggle('open');
-    }
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const hamburger = document.getElementById('hamburger');
+            
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // FAQ toggle functionality
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('span:last-child');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    item.querySelector('span:last-child').textContent = '+';
+                }
+            });
+            
+            // Toggle current item
+            faqItem.classList.toggle('active');
+            icon.textContent = faqItem.classList.contains('active') ? '−' : '+';
+        }
+
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Simple form validation and success message
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Simulate form submission
+            setTimeout(() => {
+                alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+                form.reset();
+            }, 500);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navMenu = document.getElementById('navMenu');
+                    const hamburger = document.getElementById('hamburger');
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+
+        // Header scroll effect
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScrollY = window.scrollY;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.card, .feature-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Add hamburger click event
+        document.getElementById('hamburger').addEventListener('click', toggleMenu);
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navMenu = document.getElementById('navMenu');
+            const hamburger = document.getElementById('hamburger');
+            
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Add loading state to CTA buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#contact') {
+                    return; // Let normal navigation happen
+                }
+                
+                // Add loading effect for other CTAs
+                const originalText = this.textContent;
+                this.textContent = 'Loading...';
+                this.style.opacity = '0.7';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.opacity = '1';
+                }, 1500);
+            });
+        });
+
+        // Dynamic pricing based on location (demo)
+        const pricing = {
+            'vietnam': '₫2,490,000',
+            'default': '$99 USD'
+        };
+
+        // Add floating action button for mobile
+        if (window.innerWidth <= 768) {
+            const fab = document.createElement('div');
+            fab.innerHTML = '<a href="#contact" class="cta-button">Get Started</a>';
+            fab.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1000;
+                border-radius: 50px;
+                box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
+            `;
+            document.body.appendChild(fab);
+        }
+
+        // Add scroll progress indicator
+        const progressBar = document.createElement('div');
+        progressBar.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 1000;
+            transition: width 0.3s ease;
+        `;
+        document.body.appendChild(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+    </script>
 </body>
 </html>
