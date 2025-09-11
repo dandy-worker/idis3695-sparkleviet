@@ -421,6 +421,22 @@ body {
     font-weight: 600;
 }
 
+.stats-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.insights-list li::before {
+    content: '💡';
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
 /* FAQ Styles */
 .faq-container {
     max-width: 800px;
@@ -452,6 +468,77 @@ body {
 
 .faq-item.active .faq-answer {
     display: block;
+}
+
+.practice-card {
+    border-left: 4px solid var(--primary);
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
+}
+
+.practice-card:hover {
+    border-left-color: var(--secondary);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+}
+/* Logo placeholder styles */
+.competitor-header,
+.success-story-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.competitor-logo,
+.success-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--surface-elevated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.competitor-logo-img,
+.success-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: white;
+    border-radius: 10px;
+}
+
+.competitor-logo-placeholder,
+.success-logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--surface-elevated), var(--border));
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.competitor-card:hover .competitor-logo-placeholder,
+.success-story-card:hover .success-logo-placeholder,
+.competitor-card:hover .competitor-logo,
+.success-story-card:hover .success-logo {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), transparent);
+}
+
+.competitor-header .card-title,
+.success-story-header .card-title {
+    margin-bottom: 0;
 }
 
 /* Footer */
@@ -508,6 +595,67 @@ body {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+/* References section styles */
+.references-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.reference-category {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.reference-category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+.reference-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.reference-list li {
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.reference-list li::before {
+    display: none;
+}
+
+.reference-list a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    display: block;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.reference-list a:hover {
+    background: rgba(14, 165, 233, 0.1);
+    border-color: var(--primary);
+    color: var(--text-primary);
+    transform: translateX(4px);
+}
+
+.reference-list a::before {
+    content: '🔗';
+    margin-right: 0.5rem;
 }
 
 /* Animations */
