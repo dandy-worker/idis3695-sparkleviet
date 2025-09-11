@@ -195,7 +195,7 @@ body {
     height: 8px;
     background: var(--primary);
     border-radius: 50%;
-    animation: pulse 2s infinite;
+    animation: pulse 1.5s infinite;
 }
 
 .hero-title {
@@ -285,17 +285,34 @@ body {
 }
 
 .product-image {
-    aspect-ratio: 4/3;
-    background: linear-gradient(135deg, 
-        rgba(14, 165, 233, 0.2) 0%, 
-        transparent 50%), 
-        url('images/testimonials.png');
-        /* url('https://images.unsplash.com/photo-1542996966-2e31c00bae30?q=80&w=1469&auto=format&fit=crop'); */
+    aspect-ratio: 5/4;
     background-size: cover;
     background-position: center;
     border-radius: 16px;
     margin-bottom: 1rem;
     position: relative;
+}
+
+.testimonial-image {
+    background: linear-gradient(135deg, 
+        rgba(14, 165, 233, 0.2) 0%, 
+        transparent 50%), 
+        url('images/testimonials.png');
+}
+
+
+.sparkleviet-image {
+    background: linear-gradient(135deg, 
+        rgba(14, 165, 233, 0.2) 0%, 
+        transparent 50%), 
+        url('images/product.png');
+}
+
+.refill-image {
+    background: linear-gradient(135deg, 
+        rgba(14, 165, 233, 0.2) 0%, 
+        transparent 50%), 
+        url('images/refills.png');
 }
 
 .product-image::after {
